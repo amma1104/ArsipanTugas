@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main(){
+	int ayamgoreng, jeroan, perkedel, esteh, esjeruk;
+	int uang, total, kembalian;
+	const int DISKON = 3000;
+	
+	printf("Selamat Datang di Warung Nasi Padang Barokah\n");
+	
+	printf("Daftar Menu\n");
+	//Daftar Menu dan Lauk
+	printf("1. Ayam Goreng = Rp. 5.000\n");
+	printf("2. Jeroan = Rp.6.000\n");
+	printf("3. Perkedel = Rp. 4.000\n");
+	printf("4. Es Teh = Rp. 2.000\n");
+	printf("5. Es Jeruk = Rp. 3.000\n");
+	
+	printf("Daftar Pesanan\n");
+	//Daftar Pesanan
+	printf("Jumlah ayam goreng : ");
+	scanf("%d", &ayamgoreng);
+	printf("Jumlah jeroan : ");
+	scanf("%d", &jeroan);
+	printf("Jumlah perkedel : ");
+	scanf("%d", &perkedel);
+	printf("Jumlah es teh : ");
+	scanf("%d", &esteh);
+	printf("Jumlah es jeruk : ");
+	scanf("%d", &esjeruk);
+	
+	printf(" Masukkan Nominal Uang Anda : Rp. ");
+	scanf("%d", &uang);
+	
+	total = (ayamgoreng*5000)+(jeroan*6000)+(perkedel*4000)+(esteh*2000)+(esjeruk*3000);
+	kembalian = uang-total+DISKON;
+	
+	printf("Nota\n");
+	printf("Total : Rp. %d\n", total);
+	printf("Uang yang dibayar : Rp. %d\n", uang);
+	printf("Kembalian : Rp. %d\n", kembalian);
+	printf("Diskon bulan puasa : Rp. %d\n", DISKON);
+	
+	return 0;
+	
+}
