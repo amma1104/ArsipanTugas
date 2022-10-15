@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+	//exercise 2.2
+	int a, b, range;
+	printf("Exercise 2.2\n");
+	
+	printf("Enter an integer :");
+	scanf("%d", &a);
+	printf("Enter the range : ");
+	scanf("%d", &range);
+
+	for (b = 1; b <= range; b++) {
+	printf("%d * %d = %d \n", a, b, a * b);
+	}
+	
+	//exercise 3
+	float c, sum = 0;
+	printf("Exercise 3\n");
+	
+	do {
+		printf("Enter a number : ");
+		scanf("%f", &c);
+		sum = sum + c;
+	}while(c != 0);
+	
+	printf("sum = %f", sum);
+
+	return 0;
+}
