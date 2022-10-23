@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+float c, f, k, r;
+int menu, hasil; 
+
+int main(){
+	printf("Program Konversi Suhu\n");
+	pilihmenu();
+	while(menu!=4){
+	if(menu==1){
+		hasil = fahrenheit();
+	}else if (menu==2){
+			hasil = kelvin();
+		}else if (menu==3){
+				hasil = reamur();
+			}
+		pilihmenu();
+	}		
+	printf("Terima kasih...");
+	return 0;		
+}
+
+void pilihmenu(){
+	printf("\nMasukkan pilihan anda\n");
+	printf("1. Konversi celcius ke fahrenheit\n");
+	printf("2. Konversi celcius ke kelvin\n");
+	printf("3. Konversi celcius ke reamur\n");
+	printf("4. Keluar dari program\n");
+	scanf("%d", &menu);
+}
+int fahrenheit(){
+	printf("\n---------------\n");
+	printf("Nilai celcius : ");
+	scanf("%f", &c);
+	f = (9.0/5.0)*c+32.0;
+	printf("Hasil konversi celcius ke fahrenheit adalah %.2f f", f, hasil);
+}
+int kelvin(){
+	printf("\n---------------\n");
+	printf("Nilai celcius : ");
+	scanf("%f", &c);
+	k = c+237;
+	printf("Hasil konversi celcius ke kelvin adalah %.2f k", k, hasil);
+}
+int reamur(){
+	printf("\n---------------\n");
+	printf("Nilai celcius : ");
+	scanf("%f", &c);
+	r = (4.0/5.0)*c;
+	printf("Hasil konversi celcius ke reamur adalah %.2f r", r, hasil);
+}
