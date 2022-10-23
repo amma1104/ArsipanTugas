@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main(){
+	char nama[50];
+	int ayamgoreng, jeroan, perkedel, esteh, esjeruk;
+	int uang, total, kembalian;
+	const int DISKON = 3000;
+
+	printf("Selamat Datang di Warung Nasi Padang Barokah\n");
+	
+	printf("Daftar Menu\n");
+	//Daftar menu dan lauk
+	printf("1. Ayam Goreng = Rp.5.000\n");
+	printf("2. Jeroan = Rp.6.000\n");
+	printf("3. Perkedel = Rp.4.000\n");
+	printf("4. Es Teh = Rp.2.000\n");
+	printf("5. Es Jeruk = Rp.3.000\n");
+	
+	
+	printf("Masukkan Nama Anda : ");
+	scanf("%s", nama);
+	
+	printf("Halo %s\n", nama);
+	printf("Penjual : Apa yang kamu pesan???\n");
+	
+	bool x = false;
+	int a = 5000, b = 6000;
+	printf("Harga ayam goreng : ");
+	scanf("%d", &a);
+	printf("Harga jeroan : ");
+	scanf("%d", &b);
+	
+	if(a < b) {
+		x = true;
+		printf("Pembeli(dalam hati) : Harga ayam goreng lebih murah daripada harga jeroan...\n");
+		printf("benar\n");
+	}else {
+		x = false;
+		printf("Pembeli(dalam hati) : Harga jeroan lebih murah daripada harga ayam goreng...\n");
+		printf("salah\n");
+	}
+	
+	printf("Daftar Pesanan\n");
+	//Daftar Pesanan
+	printf("Jumlah ayam goreng : ");
+	scanf("%d",&ayamgoreng);
+	printf("Jumlah jeroan : ");
+	scanf("%d",&jeroan);
+	printf("Jumlah perkedel : ");
+	scanf("%d",&perkedel);     
+	printf("Jumlah es teh : ");
+	scanf("%d",&esteh);
+	printf("Jumlah es jeruk : ");
+	scanf("%d", &esjeruk);
+	
+	printf("Masukkan Nominal Uang Anda : Rp. ");
+	scanf("%d",&uang);
+	
+	total = (ayamgoreng*5000)+(jeroan*6000)+(perkedel*4000)+(esteh*2000)+(esjeruk*3000);
+	kembalian = uang-total+DISKON;
+	
+	printf("Nota\n");
+	printf("Total : Rp.%d\n", total);
+	printf("Uang Yang Dibayar : Rp.%d\n", uang);
+	printf("Kembalian : Rp.%d\n", kembalian);
+	printf("Diskon Bulan Puasa : Rp.%d\n", DISKON);
+	
+	if(total > uang) {
+		printf("Anda menghoetank!!!\n");
+	}else {
+		printf("Anda mendapatkan 1 voucher makan gratis!!!\n");
+	}
+	
+	return 0;
+
+}
