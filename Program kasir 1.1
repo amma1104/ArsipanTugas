@@ -67,10 +67,10 @@ int main(){
 	printf("Kembalian : Rp.%d\n", kembalian);
 	printf("Diskon Bulan Puasa : Rp.%d\n", DISKON);
 	
-	if(total > uang) {
-		printf("Anda menghoetank!!!\n");
+	if(total >= uang) {
+		printf("Penjual : Anda mendapatkan 1 voucher makan gratis!!!\n");
 	}else {
-		printf("Anda mendapatkan 1 voucher makan gratis!!!\n");
+		printf("Penjual : Anda menghoetank!!!\n");
 	}
 	
 	return 0;
