@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <string.h>
+
+void daftar(char pelanggan_setia[10]){
+	printf("%s\n", pelanggan_setia);
+}
+
+int main(){
+	char nama[50];
+	int ayam_goreng, jeroan, perkedel, es_teh, es_jeruk;
+	int uang, total, kembalian, a;
+	const int GRATIS = 1000;
+	
+	printf("Selamat Datang di warung Nasi Padang barokah\n");
+	
+	printf("\nMasukkan Nama Anda : ");
+	gets(nama);
+	
+	printf("\nHalo %s!!!\n\n", nama);
+	
+	printf("Daftar Pelanggan Setia : \n");
+	daftar("1. Burhan");
+	daftar("2. Rehan");
+	daftar("3. Nayla");
+	
+	printf("\nPenjual : Apa yang kamu pesan???\n\n");
+	
+	printf("Daftar Menu dan Harga\n");
+	char daftar_menu_dan_harga[7][30] = {"1. Ayam Goreng = Rp.5.000", "2. Jeroan = Rp.6.000", "3. Perkedel = Rp.4.000", "4. Es Teh = Rp.2.000", "5. Es Jeruk = Rp.3.000"};
+	
+	for(int i=0; i<7; i++){
+		printf("%s\n", daftar_menu_dan_harga[i]);
+	}
+	
+	printf("Daftar Pesanan\n");
+	//Daftar Pesanan
+	printf("Jumlah ayam goreng : ");
+	scanf("%d",&ayam_goreng);
+	printf("Jumlah jeroan : ");
+	scanf("%d",&jeroan);
+	printf("Jumlah perkedel : ");
+	scanf("%d",&perkedel);     
+	printf("Jumlah es teh : ");
+	scanf("%d",&es_teh);
+	printf("Jumlah es jeruk : ");
+	scanf("%d", &es_jeruk);
+	
+	printf("\nMasukkan Nominal Uang Anda : Rp. ");
+	scanf("%d",&uang);
+	
+	total = (ayam_goreng*5000)+(jeroan*6000)+(perkedel*4000)+(es_teh*2000)+(es_jeruk*3000);
+	kembalian = uang-total;
+	
+	printf("\nNota\n");
+	printf("Total : Rp.%d\n", total);
+	printf("Uang Yang Dibayar : Rp.%d\n", uang);
+	printf("Kembalian : Rp.%d\n", kembalian);
+	printf("Gratis krupuk senilai : Rp.%d\n", GRATIS);
+	
+	if(total <= uang) {
+		printf("Penjual : Anda mendapatkan 1 voucher makan gratis!!!\n");
+	}else {
+		printf("Penjual : Anda menghoetank!!!\n");
+	}
+	
+	if(kembalian < 0) {
+		while(a <= 10) {
+		printf("Masukkan Nominal Uang Anda : Rp. ", a);
+		scanf("%d",&uang);
+		
+		total = (ayam_goreng*5000)+(jeroan*6000)+(perkedel*4000)+(es_teh*2000)+(es_jeruk*3000);
+		kembalian = uang-total;
+	
+		printf("\nNota\n");
+		printf("Total : Rp.%d\n", total);
+		printf("Uang Yang Dibayar : Rp.%d\n", uang);
+		printf("Kembalian : Rp.%d\n", kembalian);
+		printf("Gratis krupuk senilai : Rp.%d\n", GRATIS);
+		a++;
+		if(kembalian >= 0) {
+		break;
+		}
+		}
+	}
+	
+	return 0;
+
+}
